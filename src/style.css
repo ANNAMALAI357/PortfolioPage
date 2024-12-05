@@ -155,8 +155,7 @@ button:focus {
 }
 
 .logo {
-  height: 1.4em !important;
-  width: 2.5em !important;
+  width: 5rem !important;
 }
 
 .navbar-nav .nav-link {
@@ -240,6 +239,22 @@ button:focus {
   } /* Reset for the last half to pause */
   100% {
     transform: rotate(0deg);
+  }
+}
+.jump {
+  animation-name: jump-up-down; /* New animation name */
+  animation-duration: 1.5s; /* Adjust speed as desired */
+  animation-iteration-count: infinite; /* Infinite looping */
+  display: inline-block;
+  position: relative; /* Set relative position for up and down movement */
+}
+
+@keyframes jump-up-down {
+  0%, 100% {
+    transform: translateY(0); /* Start and end position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up by 10px */
   }
 }
 #tsparticles {
@@ -463,9 +478,8 @@ button:focus {
   box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
   color: white !important;
   background-color: transparent !important;
-  opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
-  height: 100% !important;
+  /* height: 100% !important; */
 }
 .project-card-view:hover {
   transform: scale(1.02) !important;

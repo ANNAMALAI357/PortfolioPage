@@ -2,16 +2,178 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
 import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import nms from "../../Assets/Projects/nms.jpg"
+import saas from "../../Assets/Projects/saas.jpg"
+import vendor from "../../Assets/Projects/vendor.webp"
+import teleco from "../../Assets/Projects/teleco.png"
+
+const projects = [
+  {
+    imgPath: teleco,
+    title: "How to Streamline Telecom Network Management with GenAI",
+    category: "Telecom",
+  },
+  {
+    imgPath: vendor,
+    title: "Importance of Vendor Management for Telecom",
+    category: "Telecom",
+  },
+  {
+    imgPath: nms,
+    title: "How to Pick the Perfect Remote Monitoring and Management Software for Your Network",
+    category: "NMS",
+  },
+  {
+    imgPath: nms,
+    title: "Best Practices for Remote Monitoring and Management",
+    category: "RMM",
+  },
+  {
+    imgPath: saas,
+    title: "20 Best Helpdesk Ticketing Systems & Tools in 2024",
+    category: "ITSM",
+  },
+  {
+    imgPath: chatify,
+    title: "Six Signs You Must Leverage a New RMM Tool as an MSP",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Meesho Audit: Facebook & YouTube",
+    category: "SAAS",
+  },
+  {
+    imgPath: chatify,
+    title: "Use Qualitative and Quantitative Data Together to Build Better Products",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Thinking Beyond Features: Building Emotional Connections Through Product Design",
+    category: "SAAS",
+  },
+  {
+    imgPath: chatify,
+    title: "Understanding Product Localization Challenges in the Indian Market",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Waging a War on Documents with LLM-Powered Data Extraction",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Gamification in EdTech – Lessons from Duolingo, Khan Academy, IXL, and Kahoot!",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "The Art of Strategic Feature Adoption and Avoiding Copycat Pitfalls",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "To Share, or Not to Share – OTT Industry’s Password Sharing Dilemma",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Fueler.io – Brewing Opportunities for Job Seekers Through Proof of Work",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "The Rising Necessity of Cyber Insurance for SMEs",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "What Is India Stack, and How Is It Evolving in 2023?",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Frameworks for Product Management",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "The 4-Step Process Behind Google Maps’ Successful Redesign and What Startups Can Learn from It",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "How is coto Decentralizing Social Media to Make it Safer for Women?",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Why Meta Threads Is Opting For A Chronological Feed Over An Algorithmic Feed",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "India is Leading the AI Revolution in Asia-Pacific – Equinix 2023 Global Tech Trends Survey",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "A Practical Guide to Startup Bootstrapping with The 2C2P Model by Karan Desai",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Organizations Still Optimistic About AI Despite High Failure Rate",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Personal Brand Content for Founders in Accounting Niche",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "How SaaS companies can mitigate challenges posed by accounting",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Does Your SaaS Business Need to be Globalized?",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "The Rise of Subscription Business Model",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "How SaaS is Revolutionizing the SMBs",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "Seed vs Series A vs Angel: An initial funding of your startup",
+    category: "E-commerce",
+  },
+  {
+    imgPath: chatify,
+    title: "12 Different Ways to Measure SaaS Financial Metrics",
+    category: "E-commerce",
+  }
+
+];
+
 
 function Projects() {
   return (
-    <Container fluid className="project-section">
+    <Container
+      fluid
+      className="project-section"
+    >
       <Particle />
       <Container>
         <h1 className="project-heading">
@@ -21,72 +183,86 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          <>
+            {projects.map((project, index) => (
+              <Col
+                key={index}
+                md={4}
+                className="project-card"
+              >
+                <ProjectCard
+                  imgPath={project.imgPath}
+                  title={project.title}
+                  category={project.category}
+                />
+              </Col>
+            ))}
+          </>
+          {/* <Col
+            md={4}
+            className="project-card"
+          >
             <ProjectCard
               imgPath={chatify}
-              isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="How to Streamline Telecom Network Management with GenAI"
+              category="SAAS"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col
+            md={4}
+            className="project-card"
+          >
             <ProjectCard
               imgPath={bitsOfCode}
-              isBlog={false}
               title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              category="B2B"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col
+            md={4}
+            className="project-card"
+          >
             <ProjectCard
               imgPath={editor}
-              isBlog={false}
               title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              category="SAAS"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col
+            md={4}
+            className="project-card"
+          >
             <ProjectCard
               imgPath={leaf}
-              isBlog={false}
               title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              category="Misc"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col
+            md={4}
+            className="project-card"
+          >
             <ProjectCard
               imgPath={suicide}
-              isBlog={false}
               title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
+              category="Misc"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col
+            md={4}
+            className="project-card"
+          >
             <ProjectCard
               imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              title="Ai For Social Good"
+              category="Misc"
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </Container>

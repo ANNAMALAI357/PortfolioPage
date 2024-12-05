@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.card-body-color{
+  color: white;
+}
+.align-tetx{
+  justify-content: space-between
+}
+.title-badge{
+  padding:4px 6px 4px 6px;
+  border-radius: 5px;
+  background-color: indigo;
+}
+.title-head{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.card-img{
+  height: 389px;
+  width: 389px;
+}
